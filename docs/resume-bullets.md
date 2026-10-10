@@ -1,5 +1,7 @@
 # Resume bullets
 
+**Gorla Poojitha** | InsightOps: End-to-End E-commerce Analytics
+
 Filled in with the project's real numbers. Each one is backed by a file in this repo.
 
 - Modeled a 100k-order e-commerce dataset into a star schema with dbt (17 models, 49 data tests), reducing typical analysis queries from multi-table joins to single-table reads
