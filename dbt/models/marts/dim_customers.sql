@@ -28,6 +28,7 @@ order_stats as (
         min(purchased_at)                                        as first_order_at,
         max(purchased_at)                                        as last_order_at,
         count(*) filter (where is_valid_order)                   as valid_orders,
+        count(distinct order_date) filter (where is_valid_order) as valid_order_days,
         coalesce(sum(order_value) filter (where is_valid_order), 0) as lifetime_revenue
     from {{ ref('fct_orders') }}
     group by customer_unique_id
@@ -42,6 +43,9 @@ select
     date_trunc('month', s.first_order_at) as cohort_month,
     s.valid_orders,
     s.lifetime_revenue,
-    s.valid_orders >= 2                   as is_repeat_customer
+    s.valid_orders >= 2                   as is_repeat_customer,
+    -- 250 customers have 2 orders at the same second (one checkout split in two),
+    -- so "came back on another day" is the stricter, more honest retention flag
+    s.valid_order_days >= 2               as is_returning_customer
 from latest_location l
 join order_stats s on l.customer_unique_id = s.customer_unique_id

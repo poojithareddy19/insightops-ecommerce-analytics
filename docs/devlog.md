@@ -27,3 +27,12 @@
 - Problem: I wanted the lineage image to be reproducible instead of a manual screenshot of `dbt docs serve`.
 - Fix: `scripts/plot_lineage.py` draws it from dbt/target/manifest.json. First version showed one box because matplotlib doesn't autoscale for text; had to set the axis limits by hand.
 - Next: SQL analysis portfolio.
+
+## 2026-10-10 (Phase 3)
+- Did: 16 analysis queries (01-11 from the plan, 13-17 my own), insights memo.
+- Problem: query 03 said 2,638 customers ordered again, dim_customers said 2,888 repeat customers. Same data, two answers.
+- Cause: 250 customers have two orders with the exact same purchase timestamp. That's one checkout split into two orders (probably different sellers), not someone coming back. Query 03 compares timestamps with `>`, so it skips them; dim_customers counts orders.
+- Fix: added `is_returning_customer` (valid orders on 2+ different days) to dim_customers and made it the headline metric: 2,065 of 94,990 customers, 2.2%.
+- Surprise: the 20 worst sellers by late rate only cause 3% of late orders. The plan assumed seller SLAs on those sellers would fix a lot. Volume is in the big sellers.
+- Learned: always reconcile a number against a second query before writing it down.
+- Next: statistics notebook and the A/B test.

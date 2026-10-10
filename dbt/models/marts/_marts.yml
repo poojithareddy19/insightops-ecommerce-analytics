@@ -56,6 +56,10 @@ models:
         data_tests: [unique, not_null]
       - name: cohort_month
         description: Month of the customer's first order.
+      - name: is_repeat_customer
+        description: 2 or more valid orders. Includes split checkouts (2 orders placed at the same time).
+      - name: is_returning_customer
+        description: Valid orders on 2 or more different days. Use this for "did the customer come back".
 
   - name: dim_products
     description: One row per product with an English category name.

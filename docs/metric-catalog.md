@@ -26,7 +26,16 @@ All metrics are calculated from the dbt marts. Currency is BRL unless stated.
 - **Definition:** A customer with at least 1 valid order in that calendar month.
 
 ## Repeat customer
-- **Definition:** A customer with 2 or more valid orders in the whole dataset.
+- **Definition:** A customer with 2 or more valid orders in the whole dataset
+  (dim_customers.is_repeat_customer).
+- **Caveat:** 250 of the 2,888 repeat customers placed both orders at the same
+  second, which is one checkout split into two orders, not a return visit.
+
+## Returning customer (headline retention metric)
+- **Definition:** A customer with valid orders on 2 or more different days
+  (dim_customers.is_returning_customer).
+- **Denominator:** customers with at least 1 valid order (94,990), not all
+  96,096 customer_unique_ids (1,106 only ever had canceled/unavailable orders).
 
 ## Retention (month N)
 - **Definition:** Of customers whose first valid order was in month M (their cohort),
