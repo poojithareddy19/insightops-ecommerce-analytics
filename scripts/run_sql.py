@@ -10,6 +10,10 @@ import duckdb
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = PROJECT_ROOT / "warehouse" / "insightops.duckdb"
 
+# DuckDB draws tables with box characters; the Windows console defaults to cp1252,
+# which can't print them, so force UTF-8 output.
+sys.stdout.reconfigure(encoding="utf-8")
+
 if len(sys.argv) != 2:
     sys.exit("Usage: python scripts/run_sql.py path/to/query.sql")
 
