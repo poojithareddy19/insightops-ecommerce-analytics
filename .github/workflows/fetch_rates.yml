@@ -33,4 +33,3 @@ jobs:
           git add data/external/brl_usd_rates.csv
           git diff --staged --quiet || git commit -m "Update BRL-USD exchange rates"
           git push
-```
