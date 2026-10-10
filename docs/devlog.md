@@ -68,3 +68,11 @@
 ## 2026-10-10 (Phase 7)
 - Did: README landing page with the real findings, resume bullets with real numbers.
 - Still to do by hand: Looker Studio version of the dashboards, blog posts, demo video, LinkedIn posts, pinning the repo.
+
+## 2026-10-10 (GitHub Actions check)
+- Did: ran the weekly rates workflow by hand for the first time.
+- Problem 1: "Workflow does not have 'workflow_dispatch' trigger", even though the file clearly had one. Every push had also created a 0-second failed run. GitHub couldn't parse the file: it ended with a stray ``` line left over from copying the YAML out of a Markdown guide.
+- Fix: removed the line, checked the file with a YAML parser before pushing.
+- Problem 2: the first green run committed a change to all 2,611 lines of the rates CSV with identical values. Python's csv module writes "\r\n" by default; Git on Windows had stored my copy with "\n", so the Linux runner's file differed on every line.
+- Fix: `csv.writer(f, lineterminator="\n")`. A second run then found nothing to commit, as it should.
+- Learned: a green check isn't enough; read what the job actually did.
