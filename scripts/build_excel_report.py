@@ -44,7 +44,10 @@ def style_header(ws, row: int, n_cols: int) -> None:
 
 
 def main() -> None:
-    items = pd.read_csv(SOURCE, parse_dates=["order_date"])
+    # Exports start with a '# Author' line unless they were made with --plain
+    with open(SOURCE, encoding="utf-8") as f:
+        skip = 1 if f.readline().startswith("#") else 0
+    items = pd.read_csv(SOURCE, parse_dates=["order_date"], skiprows=skip)
     items["order_year"] = items["order_date"].dt.year
 
     revenue = items.pivot_table(index="category_name", columns="order_year",

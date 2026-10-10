@@ -1,6 +1,6 @@
 -- Author: Gorla Poojitha
 -- Export the cohort retention table in "long" format for the Looker Studio heatmap.
--- Run from the project root AFTER scripts/export_marts.py (which creates data/exports/).
+-- scripts/export_marts.py runs this for you. To run it alone, run from the project root after export_marts.py.
 -- Only complete cohorts (Jan 2017 to Aug 2018) are included.
 
 COPY (

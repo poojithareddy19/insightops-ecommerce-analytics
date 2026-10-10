@@ -56,7 +56,7 @@ Python 3.12. From the project root:
 5. `cd dbt && dbt build && cd ..` (expect PASS=65 WARN=1 ERROR=0; the warning is explained in the data audit)
 6. `python scripts/run_sql.py analyses/03_never_reordered.sql` (any query in analyses/)
 7. `python scripts/build_dashboards.py`, `python scripts/build_deck.py`
-8. `python scripts/export_marts.py`, then `python scripts/build_excel_report.py`
+8. `python scripts/export_marts.py` (add `--plain` for Looker Studio uploads), then `python scripts/build_excel_report.py`
 
 On Windows, if `jupyter nbconvert` fails with a pyzmq DLL error, run it as
 `python -m nbconvert` so it uses the venv instead of another Python install.
