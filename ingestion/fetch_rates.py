@@ -38,7 +38,8 @@ def main() -> None:
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, "w", newline="") as f:
-        writer = csv.writer(f)
+        # Always "\n": the csv default is "\r\n", which made each run on Linux rewrite every line
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["rate_date", "brl_to_usd"])
         for day in sorted(all_rates):
             writer.writerow([day, all_rates[day]])
