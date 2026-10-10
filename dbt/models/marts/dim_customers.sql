@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Grain: ONE ROW PER REAL CUSTOMER (customer_unique_id).
 
 with customer_orders as (

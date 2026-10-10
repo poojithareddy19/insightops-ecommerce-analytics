@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Grain: ONE ROW PER SELLER, with approximate coordinates.
 
 with sellers as (

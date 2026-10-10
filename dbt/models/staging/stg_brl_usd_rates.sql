@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Daily BRL to USD rates collected by ingestion/fetch_rates.py (business days only).
 
 with source as (

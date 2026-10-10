@@ -1,3 +1,4 @@
+{# Author: Gorla Poojitha #}
 {#
   By default dbt would name our schemas "main_staging" and "main_marts".
   This macro makes them simply "staging" and "marts".

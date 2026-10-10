@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Grain: ONE ROW PER ORDER.
 -- The main table for revenue, orders, AOV, delivery and review analysis.
 

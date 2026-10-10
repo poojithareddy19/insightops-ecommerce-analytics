@@ -1,3 +1,4 @@
+# Author: Gorla Poojitha
 """
 Draw the dbt lineage graph (raw sources -> staging -> marts) from dbt's manifest.json
 and save it to dashboards/dbt_lineage.png.

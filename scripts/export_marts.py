@@ -1,3 +1,4 @@
+# Author: Gorla Poojitha
 """
 Export the mart tables to CSV files in data/exports/
 so you can upload them to Looker Studio, Google Sheets, Excel or BigQuery.

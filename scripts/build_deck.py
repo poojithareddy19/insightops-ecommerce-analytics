@@ -1,3 +1,4 @@
+# Author: Gorla Poojitha
 """
 Build the 5-slide capstone deck as docs/capstone-deck.pdf.
 Numbers come from the warehouse; the impact ranges match docs/capstone-memo.md.

@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Raw geolocation has many rows per zip code prefix.
 -- We collapse it to ONE row per zip prefix (average coordinates, most common city/state).
 

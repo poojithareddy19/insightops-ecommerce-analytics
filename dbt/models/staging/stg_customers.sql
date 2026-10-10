@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- One row per customer_id.
 -- WARNING: customer_id is created per ORDER in Olist.
 -- The real person is customer_unique_id. Always use customer_unique_id for retention.

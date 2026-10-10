@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 with source as (
     select * from {{ source('olist', 'sellers') }}
 )

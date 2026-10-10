@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Grain: ONE ROW PER CALENDAR DAY. A calendar table makes date filtering easy.
 
 with days as (

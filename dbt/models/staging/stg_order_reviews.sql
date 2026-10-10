@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- One row per ORDER (deduplicated).
 -- Raw data issue: some orders have more than one review.
 -- Rule (documented in docs/data-audit.md): keep the most recently answered review.

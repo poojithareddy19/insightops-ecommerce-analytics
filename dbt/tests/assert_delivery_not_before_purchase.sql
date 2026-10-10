@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- A singular test: dbt FAILS this test if the query returns any rows.
 -- An order cannot be delivered before it was purchased.
 {{ config(severity = 'warn') }}

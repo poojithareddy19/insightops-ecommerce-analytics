@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- One row per payment. An order can be paid in several parts (e.g. voucher + card).
 
 with source as (

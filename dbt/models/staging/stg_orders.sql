@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- One row per order. Renames timestamp columns and casts text to real timestamps.
 
 with source as (

@@ -1,3 +1,4 @@
+# Author: Gorla Poojitha
 """
 Download daily BRL -> USD exchange rates from the free Frankfurter API
 (no API key needed) and save them to data/external/brl_usd_rates.csv.

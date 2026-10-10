@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- One row per product. Fixes the misspelled "lenght" column names from the source.
 
 with source as (

@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Grain: ONE ROW PER ITEM IN AN ORDER. Use for product, category and seller analysis.
 
 with items as (

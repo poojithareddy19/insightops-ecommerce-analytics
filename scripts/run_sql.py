@@ -1,3 +1,4 @@
+# Author: Gorla Poojitha
 """
 Run a .sql file against the warehouse and print every result.
 Usage:  python scripts/run_sql.py analyses/01_monthly_revenue_growth.sql

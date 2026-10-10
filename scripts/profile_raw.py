@@ -1,3 +1,4 @@
+# Author: Gorla Poojitha
 """
 Profile every raw table: row count, and the null percentage of every column.
 Writes the result to docs/profile_raw.md so you can read it and use it in your data audit.

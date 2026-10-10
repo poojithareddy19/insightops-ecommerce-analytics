@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Grain: ONE ROW PER PRODUCT, with the English category name.
 
 with products as (

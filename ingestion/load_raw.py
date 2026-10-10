@@ -1,3 +1,4 @@
+# Author: Gorla Poojitha
 """
 Load the Olist CSV files (and the exchange-rate CSV) into the 'raw' schema
 of the DuckDB warehouse.
