@@ -17,7 +17,7 @@ def main() -> None:
         "SELECT table_name FROM information_schema.tables WHERE table_schema = 'raw' ORDER BY 1"
     ).fetchall()]
 
-    lines = ["# Raw data profile", ""]
+    lines = ["# Raw data profile", "", "*Gorla Poojitha*", ""]
     for table in tables:
         total = con.execute(f"SELECT COUNT(*) FROM raw.{table}").fetchone()[0]
         lines += [f"## raw.{table} ({total:,} rows)", "", "| column | nulls | null % | distinct values |", "|---|---|---|---|"]
