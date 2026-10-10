@@ -1,5 +1,7 @@
 # Devlog
 
+*Gorla Poojitha*
+
 ## 2026-10-10 (Phase 0)
 - Did: created the repo, folder layout, .gitignore and requirements, set up a Python 3.12 venv, downloaded the Olist data.
 - Problem: the default `python` on this machine is 3.13 from miniconda, and the guide targets 3.12.
