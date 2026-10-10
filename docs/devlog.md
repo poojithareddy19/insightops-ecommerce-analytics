@@ -64,3 +64,7 @@
 - How I estimated impact: customers a year x (target rate - current rate) x R$167 of later orders per returning customer. Target rates come from groups already in the data (on-time first orders; high-return categories at 3.1-4.3%), and every number is given as a range.
 - Problem: deck slide showed "R55ktoR110k" in italics. Two dollar signs in one string turn on matplotlib's math mode. Fixed with text.parse_math = False.
 - Next: README landing page.
+
+## 2026-10-10 (Phase 7)
+- Did: README landing page with the real findings, resume bullets with real numbers.
+- Still to do by hand: Looker Studio version of the dashboards, blog posts, demo video, LinkedIn posts, pinning the repo.
