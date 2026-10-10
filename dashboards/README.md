@@ -23,8 +23,9 @@ its customers order again in a later month.
 For a logistics or seller manager: delivery speed, late rate, reviews, and the states
 and categories where the delivery promise breaks. Delivery time and late rate are
 separate charts on purpose: they have different units, and a shared chart with two
-y-axes would invite false comparisons. Feb-Mar 2018 stands out: deliveries were not
-much slower, but the late rate jumped to 19%, so the delivery estimates were too tight.
+y-axes would invite false comparisons. Feb-Mar 2018 stands out: the median delivery
+slowed to 13-14 days while the promised window shrank from 26 to 22 days, so the late
+rate jumped to 19% in March. Slower deliveries and tighter promises at the same time.
 
 ## Excel report
 

@@ -50,7 +50,8 @@
 ## 2026-10-10 (Phase 5)
 - Did: CSV exports for Looker Studio, two dashboard pages rendered from the marts, Excel category report.
 - Decision: built the dashboards as a script (matplotlib) instead of Looker Studio for now, so they rebuild from the warehouse with one command. The exports are ready for Looker later.
-- Redesign: the guide's operations page puts median delivery days and late rate on one time series. Different units, so I split them into two charts instead of a dual axis. That split is what made Feb-Mar 2018 obvious: delivery barely slowed but the late rate hit 19%. The estimates were too tight, not the trucks too slow.
+- Redesign: the guide's operations page puts median delivery days and late rate on one time series. Different units, so I split them into two charts instead of a dual axis. That split is what made Feb-Mar 2018 obvious: the late rate hit 19%.
+- Correction: I first wrote that delivery barely slowed and the estimates were simply too tight. Looking at the chart again, Feb 2018 is the slowest month (median 14 days). Checked promised vs actual by month: deliveries slowed to 13-14 days AND the promised window shrank from 26 to 22 days. Both at once.
 - Problem: the "Nov 2017 peak" label sat on top of the chart subtitle, then on top of the line. Moved it to the left of the point.
 - Problem: openpyxl can't create a real PivotTable. Built the pivot as a sorted summary table and kept XLOOKUP and actual vs target as live formulas. Opened it in Excel to confirm the formulas actually calculate.
 - Next: capstone on repeat purchases.
