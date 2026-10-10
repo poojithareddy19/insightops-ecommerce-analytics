@@ -31,6 +31,7 @@ BLUES = LinearSegmentedColormap.from_list(
     "blues", ["#f0efec", "#cde2fb", "#86b6ef", "#3987e5", "#1c5cab", "#0d366b"])
 
 TREND_START, TREND_END = "2017-01-01", "2018-08-01"
+AUTHOR = "Gorla Poojitha"
 
 plt.rcParams.update({
     "font.family": "DejaVu Sans",
@@ -131,6 +132,7 @@ def executive_overview(con):
     gs = GridSpec(3, 5, figure=fig, height_ratios=[0.42, 1, 1], hspace=0.55, wspace=0.55,
                   left=0.1, right=0.97, top=0.88, bottom=0.06)
     fig.text(0.07, 0.955, "InsightOps: Executive Overview", fontsize=20, fontweight="bold")
+    fig.text(0.97, 0.955, AUTHOR, fontsize=12, color=INK_SECONDARY, ha="right")
     fig.text(0.07, 0.928, "Olist marketplace, valid orders (canceled and unavailable excluded). "
              "Trends: Jan 2017 to Aug 2018, the complete months.", fontsize=10.5, color=INK_SECONDARY)
 
@@ -232,6 +234,7 @@ def operations(con):
     gs = GridSpec(3, 6, figure=fig, height_ratios=[0.42, 1, 1], hspace=0.55, wspace=0.9,
                   left=0.07, right=0.97, top=0.88, bottom=0.06)
     fig.text(0.07, 0.955, "InsightOps: Operations", fontsize=20, fontweight="bold")
+    fig.text(0.97, 0.955, AUTHOR, fontsize=12, color=INK_SECONDARY, ha="right")
     fig.text(0.07, 0.928, "Delivered orders only. Late = delivered after the estimated date given at purchase.",
              fontsize=10.5, color=INK_SECONDARY)
 
