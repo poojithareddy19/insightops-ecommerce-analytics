@@ -36,3 +36,13 @@
 - Surprise: the 20 worst sellers by late rate only cause 3% of late orders. The plan assumed seller SLAs on those sellers would fix a lot. Volume is in the big sellers.
 - Learned: always reconcile a number against a second query before writing it down.
 - Next: statistics notebook and the A/B test.
+
+## 2026-10-10 (Phase 4)
+- Did: statistics notebook (skew, Mann-Whitney on late vs on-time reviews, full simulated A/B test) and the decision memo.
+- Problem: `jupyter nbconvert` crashed with "DLL load failed while importing _zmq". The venv's `jupyter` launcher was picking up miniconda's broken pyzmq.
+- Fix: run it as `python -m nbconvert` with the venv's Python, so everything comes from the venv.
+- Problem: the log10 histogram of order value broke on orders worth 0 (valid orders with no items). Filtered to positive values for that plot.
+- Added: a within-state check on the review gap. Late orders score 1.6 to 2.3 stars lower inside each of the 10 biggest states, so geography doesn't explain it away.
+- Result: the free shipping test "wins" on significance (+0.86 pp, p < 0.0001) and loses on money (about -R$59k net). Breaking even needs a 12.5 pp lift.
+- Learned: daily peeking turned a 5% false positive rate into 24% in simulation. Fix the sample size first.
+- Next: dashboards.
