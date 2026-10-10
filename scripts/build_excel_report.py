@@ -61,6 +61,8 @@ def main() -> None:
     ws["A1"] = "Revenue (item price + freight, BRL) and orders by category and year"
     ws["A1"].font = Font(bold=True, size=13)
     ws["A2"] = "Valid orders only. 2016 and 2018 are partial years. Source: data/exports/dashboard_order_items.csv"
+    ws["A3"] = "Prepared by Gorla Poojitha"
+    ws["A3"].font = Font(italic=True, color="52514E")
 
     headers = (["category_name"] + [f"revenue {y}" for y in years] + ["revenue total"]
                + [f"orders {y}" for y in years] + ["target", "actual vs target"])
