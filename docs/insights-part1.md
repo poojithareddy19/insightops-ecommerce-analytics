@@ -1,5 +1,7 @@
 # Insights, Part 1: What the Olist Data Says
 
+*Gorla Poojitha*
+
 **Bottom line:** Olist is almost entirely a first-purchase business. Only about 2 in
 100 customers ever come back, so growing repeat purchases is the largest untapped
 opportunity. Late delivery is the clearest thing standing in the way.

@@ -1,5 +1,7 @@
 # Metric Catalog
 
+*Gorla Poojitha*
+
 All metrics are calculated from the dbt marts. Currency is BRL unless stated.
 
 ## Revenue

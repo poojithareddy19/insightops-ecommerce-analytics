@@ -1,5 +1,7 @@
 # Data Audit: Olist E-commerce Dataset
 
+*Gorla Poojitha*
+
 Date: 2026-10-10
 Tables audited: 9 Olist tables + BRL/USD rates (Frankfurter API)
 Orders cover 2016-09-04 to 2018-10-17.

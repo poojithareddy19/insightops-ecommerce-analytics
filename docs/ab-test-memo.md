@@ -1,5 +1,7 @@
 # A/B Test Memo: Free Shipping
 
+*Gorla Poojitha*
+
 > Note: this experiment is SIMULATED on real Olist customer IDs to demonstrate
 > methodology. Order values and freight costs are real Olist figures.
 > Full analysis: notebooks/04_statistics_ab_test.ipynb
