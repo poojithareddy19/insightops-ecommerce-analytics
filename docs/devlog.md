@@ -55,3 +55,12 @@
 - Problem: the "Nov 2017 peak" label sat on top of the chart subtitle, then on top of the line. Moved it to the left of the point.
 - Problem: openpyxl can't create a real PivotTable. Built the pivot as a sorted summary table and kept XLOOKUP and actual vs target as live formulas. Opened it in Excel to confirm the formulas actually calculate.
 - Next: capstone on repeat purchases.
+
+## 2026-10-10 (Phase 6)
+- Did: capstone analysis (query 12), memo and a 5-slide deck generated from the warehouse.
+- Choice: only first orders from Jan 2017 to May 2018 in the capstone, so every customer had 3+ months to come back. Without that, mid-2018 customers drag the return rate down just because the data ends.
+- Result: a late first delivery cuts the return rate by a third (1.74% vs 2.57%, CI 0.47 to 1.19 pp). Not "half", which is what I expected going in.
+- Surprise: when I did the impact maths, fixing late first deliveries is worth only R$4k to R$7k a year in repeat sales. 5,250 late first orders x 0.83 pp x R$167 is just small. The bigger lever is a first-month win-back for all 65.7k new customers (R$55k to R$110k), and it has to be A/B tested.
+- How I estimated impact: customers a year x (target rate - current rate) x R$167 of later orders per returning customer. Target rates come from groups already in the data (on-time first orders; high-return categories at 3.1-4.3%), and every number is given as a range.
+- Problem: deck slide showed "R55ktoR110k" in italics. Two dollar signs in one string turn on matplotlib's math mode. Fixed with text.parse_math = False.
+- Next: README landing page.
