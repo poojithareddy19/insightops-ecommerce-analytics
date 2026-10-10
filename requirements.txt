@@ -1,0 +1,11 @@
+duckdb
+pandas
+requests
+dbt-duckdb
+jupyter
+matplotlib
+seaborn
+scipy
+statsmodels
+openpyxl
+kagglehub

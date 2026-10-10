@@ -1,0 +1,23 @@
+# Python virtual environment and caches
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Large raw data: anyone can re-download it from Kaggle, so we do not commit it
+data/raw/
+data/exports/
+
+# The warehouse file is rebuilt by our scripts, so we do not commit it
+warehouse/
+
+# dbt build outputs
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+logs/
+dbt/.user.yml
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+.vscode/
