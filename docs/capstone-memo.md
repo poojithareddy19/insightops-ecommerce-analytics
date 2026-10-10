@@ -1,6 +1,6 @@
 # Growing Repeat Purchases at Olist
 
-**To:** Head of Growth  |  **From:** InsightOps analytics  |  **Date:** 10 October 2026
+**To:** Head of Growth  |  **From:** Gorla Poojitha  |  **Date:** 10 October 2026
 
 ## Bottom line
 Only 2.2% of customers ever come back on a later day, and the first order matters:
