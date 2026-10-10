@@ -44,9 +44,11 @@ def main() -> None:
         # all_varchar = true loads every column as text.
         # Raw data should be an untouched copy; we fix types later in dbt.
         # It also protects zip codes like '01310' from losing the leading zero.
+        # Our own rates file starts with a '# Author' line; the Olist files are left exactly as downloaded.
+        comment = ", comment = '#'" if table == "brl_usd_rates" else ""
         con.execute(f"""
             CREATE OR REPLACE TABLE raw.{table} AS
-            SELECT * FROM read_csv('{path.as_posix()}', header = true, all_varchar = true)
+            SELECT * FROM read_csv('{path.as_posix()}', header = true, all_varchar = true{comment})
         """)
         row_count = con.execute(f"SELECT COUNT(*) FROM raw.{table}").fetchone()[0]
         print(f"raw.{table:<22} {row_count:>10,} rows")

@@ -41,6 +41,7 @@ def main() -> None:
     with open(OUTPUT_FILE, "w", newline="") as f:
         # Always "\n": the csv default is "\r\n", which made each run on Linux rewrite every line
         writer = csv.writer(f, lineterminator="\n")
+        f.write("# Author: Gorla Poojitha\n")  # load_raw.py skips lines starting with '#'
         writer.writerow(["rate_date", "brl_to_usd"])
         for day in sorted(all_rates):
             writer.writerow([day, all_rates[day]])
