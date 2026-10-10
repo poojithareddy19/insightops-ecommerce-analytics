@@ -46,3 +46,11 @@
 - Result: the free shipping test "wins" on significance (+0.86 pp, p < 0.0001) and loses on money (about -R$59k net). Breaking even needs a 12.5 pp lift.
 - Learned: daily peeking turned a 5% false positive rate into 24% in simulation. Fix the sample size first.
 - Next: dashboards.
+
+## 2026-10-10 (Phase 5)
+- Did: CSV exports for Looker Studio, two dashboard pages rendered from the marts, Excel category report.
+- Decision: built the dashboards as a script (matplotlib) instead of Looker Studio for now, so they rebuild from the warehouse with one command. The exports are ready for Looker later.
+- Redesign: the guide's operations page puts median delivery days and late rate on one time series. Different units, so I split them into two charts instead of a dual axis. That split is what made Feb-Mar 2018 obvious: delivery barely slowed but the late rate hit 19%. The estimates were too tight, not the trucks too slow.
+- Problem: the "Nov 2017 peak" label sat on top of the chart subtitle, then on top of the line. Moved it to the left of the point.
+- Problem: openpyxl can't create a real PivotTable. Built the pivot as a sorted summary table and kept XLOOKUP and actual vs target as live formulas. Opened it in Excel to confirm the formulas actually calculate.
+- Next: capstone on repeat purchases.
