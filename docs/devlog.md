@@ -17,3 +17,13 @@
 - Most surprising: 99,441 customer_ids but only 96,096 real people. Counting customer_id would make almost every customer look like a one-time buyer by construction. Also 789 review_ids are shared by 2+ orders, so review_id can't be a key either.
 - Also: November 2016 has zero orders, and Sep/Oct 2018 have 20 between them. Any trend chart has to be cut to Jan 2017 to Aug 2018.
 - Next: dbt staging and marts.
+
+## 2026-10-10 (Phase 2)
+- Did: dbt project with 10 staging views and 7 mart tables, 47 schema tests + 2 singular tests, docs, lineage graph, metric catalog.
+- Result: `dbt build` gives PASS=65 WARN=1 ERROR=0.
+- Problem: the warning (1,021 orders where payments != items + freight) was supposed to be installment interest. When I split it, 772 of them were paid orders with no items at all, mostly unavailable/canceled. Interest only explains about 230.
+- Learned: check an explanation before writing it into the audit. The "obvious" cause was the minority.
+- Decisions: a customer is a customer_unique_id, never customer_id. Revenue is items + freight on valid orders (not payment_value, which includes interest and money taken for orders that never shipped).
+- Problem: I wanted the lineage image to be reproducible instead of a manual screenshot of `dbt docs serve`.
+- Fix: `scripts/plot_lineage.py` draws it from dbt/target/manifest.json. First version showed one box because matplotlib doesn't autoscale for text; had to set the axis limits by hand.
+- Next: SQL analysis portfolio.

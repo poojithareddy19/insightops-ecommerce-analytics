@@ -32,5 +32,22 @@ but only 96,096 real customers.
 Text columns that are mostly empty and that's fine: review_comment_title (88.3% null)
 and review_comment_message (58.7% null). Customers leave a score without a comment.
 
+## dbt build warning: payments vs order value
+
+`dbt build` finishes with PASS=65 WARN=1 ERROR=0 (17 models, 49 data tests).
+The warning is `assert_payment_matches_order_value`: 1,021 orders (1.0%) where the
+payment total differs from items + freight by more than R$1.
+
+I expected installment interest to explain most of these. It doesn't:
+
+| Group | Orders | Explanation |
+|---|---|---|
+| Paid, but the order has no items | 772 | Almost all canceled (161) or unavailable (603). Payment was taken, nothing shipped. order_value is 0 for these. |
+| Paid more than items + freight | 232 | 229 of them on 2+ installments; median overpayment is about 10% of order value. Installment interest. |
+| Paid less than items + freight | 17 | None are voucher-led. Unexplained, too small to matter. |
+
+Decision: keep the test as a warning. Revenue is defined from items + freight,
+not payments (see metric-catalog.md), so neither group distorts revenue.
+
 ## Checks I ran
 See analyses/00_data_quality_checks.sql and docs/profile_raw.md.

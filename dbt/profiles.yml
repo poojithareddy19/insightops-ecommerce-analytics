@@ -1,0 +1,8 @@
+insightops:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../warehouse/insightops.duckdb
+      schema: main
+      threads: 4

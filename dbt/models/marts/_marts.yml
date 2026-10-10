@@ -1,0 +1,76 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: One row per order. The main table for revenue, AOV, delivery and reviews.
+    columns:
+      - name: order_id
+        description: Unique order identifier.
+        data_tests: [unique, not_null]
+      - name: customer_unique_id
+        description: The real customer. Joins to dim_customers.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_unique_id
+      - name: order_value
+        description: Item prices plus freight in BRL. See docs/metric-catalog.md (Revenue).
+        data_tests: [not_null]
+      - name: is_valid_order
+        description: False for canceled or unavailable orders. Revenue only counts valid orders.
+      - name: is_late
+        description: True when delivered after the estimated date. Null when not delivered.
+      - name: delivery_days
+        description: Days from purchase to delivery to the customer.
+
+  - name: fct_order_items
+    description: One row per item in an order.
+    columns:
+      - name: order_item_key
+        data_tests: [unique, not_null]
+      - name: product_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+      - name: seller_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_sellers')
+                field: seller_id
+
+  - name: fct_payments
+    description: One row per payment part.
+    columns:
+      - name: payment_key
+        data_tests: [unique, not_null]
+
+  - name: dim_customers
+    description: One row per real customer (customer_unique_id).
+    columns:
+      - name: customer_unique_id
+        data_tests: [unique, not_null]
+      - name: cohort_month
+        description: Month of the customer's first order.
+
+  - name: dim_products
+    description: One row per product with an English category name.
+    columns:
+      - name: product_id
+        data_tests: [unique, not_null]
+      - name: category_name
+        data_tests: [not_null]
+
+  - name: dim_sellers
+    columns:
+      - name: seller_id
+        data_tests: [unique, not_null]
+
+  - name: dim_dates
+    columns:
+      - name: date_day
+        data_tests: [unique, not_null]

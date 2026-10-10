@@ -1,0 +1,91 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: One row per customer_id (Olist creates a new customer_id for every order).
+    columns:
+      - name: customer_id
+        description: Order-level customer key. Joins to stg_orders.
+        data_tests: [unique, not_null]
+      - name: customer_unique_id
+        description: The real person. Use this for counting customers and retention.
+        data_tests: [not_null]
+
+  - name: stg_orders
+    description: One row per order with typed timestamps.
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: order_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['delivered', 'shipped', 'canceled', 'unavailable', 'invoiced', 'processing', 'created', 'approved']
+
+  - name: stg_order_items
+    description: One row per item in an order.
+    columns:
+      - name: order_item_key
+        data_tests: [unique, not_null]
+      - name: order_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+
+  - name: stg_order_payments
+    description: One row per payment part of an order.
+    columns:
+      - name: payment_key
+        data_tests: [unique, not_null]
+      - name: payment_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['credit_card', 'boleto', 'voucher', 'debit_card', 'not_defined']
+
+  - name: stg_order_reviews
+    description: One row per order, keeping the latest review when an order has several.
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+      - name: review_score
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4, 5]
+                quote: false
+
+  - name: stg_products
+    columns:
+      - name: product_id
+        data_tests: [unique, not_null]
+
+  - name: stg_sellers
+    columns:
+      - name: seller_id
+        data_tests: [unique, not_null]
+
+  - name: stg_geolocation
+    description: One row per zip code prefix (raw data had many duplicates per prefix).
+    columns:
+      - name: zip_code_prefix
+        data_tests: [unique, not_null]
+
+  - name: stg_category_translation
+    columns:
+      - name: product_category_name
+        data_tests: [unique, not_null]
+
+  - name: stg_brl_usd_rates
+    columns:
+      - name: rate_date
+        data_tests: [unique, not_null]
