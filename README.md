@@ -1,5 +1,7 @@
 # InsightOps: End-to-End E-commerce Analytics
 
+**By Gorla Poojitha** ([@poojithareddy19](https://github.com/poojithareddy19))
+
 I built the analytics function for a real Brazilian e-commerce marketplace
 (Olist, ~100k orders): from raw data to a tested warehouse, SQL analyses, an A/B
 test, dashboards and business recommendations.
