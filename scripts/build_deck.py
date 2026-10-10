@@ -59,7 +59,7 @@ def slide(number, title, subtitle=""):
     if subtitle:
         fig.text(0.06, 0.83, subtitle, fontsize=13, color=INK_SECONDARY)
     fig.text(0.94, 0.04, f"{number} / 5", fontsize=10, color=INK_SECONDARY, ha="right")
-    fig.text(0.06, 0.04, "InsightOps | Olist marketplace, Sep 2016 to Aug 2018", fontsize=10, color=INK_SECONDARY)
+    fig.text(0.06, 0.04, "Gorla Poojitha | InsightOps | Olist marketplace, Sep 2016 to Aug 2018", fontsize=10, color=INK_SECONDARY)
     return fig
 
 
