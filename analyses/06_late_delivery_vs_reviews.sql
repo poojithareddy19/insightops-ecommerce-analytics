@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: Do late deliveries get worse review scores?
 -- Techniques: CASE buckets, aggregation, comparing groups.
 

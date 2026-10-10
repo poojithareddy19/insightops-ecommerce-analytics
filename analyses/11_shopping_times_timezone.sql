@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: When do customers shop? (local Brazil time vs UTC)
 -- Techniques: timezone conversion, extracting day of week and hour.
 -- Olist timestamps are in Sao Paulo local time with no timezone attached.

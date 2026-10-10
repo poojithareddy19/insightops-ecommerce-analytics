@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: Of the customers who first bought in month X,
 -- what % came back 1, 2, 3, 6 and 12 months later?
 -- Techniques: cohort analysis, date_diff, conditional aggregation (pivot with CASE).

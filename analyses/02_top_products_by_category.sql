@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: Which products lead each of the top 5 categories?
 -- Techniques: joins, DENSE_RANK window function, QUALIFY to filter on a window result.
 

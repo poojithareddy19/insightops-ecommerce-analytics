@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Phase 1 data quality checks on the RAW tables.
 -- Run one block at a time and write every surprising number into docs/data-audit.md.
 

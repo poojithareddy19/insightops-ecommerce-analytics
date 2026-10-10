@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: What share of customers never placed a second order?
 -- Technique: anti-join with NOT EXISTS (find rows that have NO match).
 

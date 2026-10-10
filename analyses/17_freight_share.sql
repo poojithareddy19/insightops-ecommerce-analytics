@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: Which categories are expensive to ship, relative to what they sell for?
 -- Techniques: ratio of sums (not average of ratios), HAVING, RANK.
 

@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: Which categories grew fastest from 2017 to 2018?
 -- Only January to August is compared, because the data stops in August 2018.
 -- Techniques: conditional aggregation, growth rate, minimum-size filter.

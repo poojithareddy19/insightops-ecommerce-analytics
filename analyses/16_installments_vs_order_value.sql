@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: Do bigger orders get paid in more installments?
 -- Techniques: CASE buckets, median vs mean, share of orders.
 -- Only credit card orders: boleto, voucher and debit are paid in one go.

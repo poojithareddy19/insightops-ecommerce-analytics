@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: What % of revenue comes from the top 10% of customers?
 -- Techniques: NTILE(10) deciles, share of total with SUM() OVER ().
 

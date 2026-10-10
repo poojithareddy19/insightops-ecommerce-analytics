@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: For customers who come back, how long until their second order?
 -- This tells us when a "come back" offer should go out.
 -- Techniques: LAG within each customer, QUALIFY, percentiles.

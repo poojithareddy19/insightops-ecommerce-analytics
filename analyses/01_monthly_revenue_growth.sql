@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: How is revenue trending month over month?
 -- Techniques: date_trunc, LAG window function, running total (SUM OVER).
 

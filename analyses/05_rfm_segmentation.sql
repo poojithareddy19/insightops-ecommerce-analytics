@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: How can we group customers by Recency, Frequency and Monetary value?
 -- Technique: NTILE(5) splits customers into 5 equal-sized buckets (scores 1 to 5).
 

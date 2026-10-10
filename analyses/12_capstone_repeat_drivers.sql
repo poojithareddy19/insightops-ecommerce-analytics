@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Capstone: Does the FIRST order experience predict whether a customer comes back?
 -- For each customer we look only at their first valid order.
 --

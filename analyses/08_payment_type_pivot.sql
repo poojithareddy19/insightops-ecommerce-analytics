@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: How do customers pay, and is it changing each year?
 -- Technique: CASE-based pivot (turning rows into columns).
 

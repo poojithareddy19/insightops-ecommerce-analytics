@@ -1,3 +1,4 @@
+-- Author: Gorla Poojitha
 -- Business question: How many orders had more than one review, and which one do we keep?
 -- Technique: ROW_NUMBER() to deduplicate (the most common live SQL interview question).
 
