@@ -78,3 +78,12 @@
 - Problem 2: the first green run committed a change to all 2,611 lines of the rates CSV with identical values. Python's csv module writes "\r\n" by default; Git on Windows had stored my copy with "\n", so the Linux runner's file differed on every line.
 - Fix: `csv.writer(f, lineterminator="\n")`. A second run then found nothing to commit, as it should.
 - Learned: a green check isn't enough; read what the job actually did.
+
+## 2026-10-10 (author line in the raw files)
+- Did: download_olist.py now puts a "# Author" line on top of each raw CSV, and load_raw.py skips it. The original download stays untouched in the kagglehub cache.
+- Problem 1: the load crashed on order_reviews ("not possible to detect the CSV dialect"), but my check said all tables matched. The failed load had left the old tables in place, and piping the output through `tail` hid the exit code.
+- Fix: drop the raw schema before reloading and run with `set -o pipefail`, so a failed load can't pass as identical.
+- Problem 2: order_reviews uses "\r\n" line endings and my author line used "\n". Mixed endings broke DuckDB's format detection. Now the line copies each file's own ending.
+- Problem 3: product_category_name_translation.csv starts with an invisible UTF-8 byte order mark. Putting my line in front of it pushed the mark into the first column name. Now the mark stays first and the loader looks past it.
+- Checked: all 10 raw tables have the same row counts, content hashes and column names as before; dbt build PASS=65 WARN=1 ERROR=0; untouched Kaggle files still load.
+- Learned: "identical" is only meaningful if the thing you compare against was rebuilt.

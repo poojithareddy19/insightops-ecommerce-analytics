@@ -44,11 +44,14 @@ def main() -> None:
         # all_varchar = true loads every column as text.
         # Raw data should be an untouched copy; we fix types later in dbt.
         # It also protects zip codes like '01310' from losing the leading zero.
-        # Our own rates file starts with a '# Author' line; the Olist files are left exactly as downloaded.
-        comment = ", comment = '#'" if table == "brl_usd_rates" else ""
+        # Files may start with a '# Author' line; skip exactly that one line when it's there.
+        # (Not DuckDB's comment option: review text can contain line breaks inside quotes.)
+        # Look past a UTF-8 byte order mark, which DuckDB strips before counting lines.
+        with open(path, "rb") as f:
+            skip = 1 if f.read(4).removeprefix(b"\xef\xbb\xbf")[:1] == b"#" else 0
         con.execute(f"""
             CREATE OR REPLACE TABLE raw.{table} AS
-            SELECT * FROM read_csv('{path.as_posix()}', header = true, all_varchar = true{comment})
+            SELECT * FROM read_csv('{path.as_posix()}', header = true, all_varchar = true, skip = {skip})
         """)
         row_count = con.execute(f"SELECT COUNT(*) FROM raw.{table}").fetchone()[0]
         print(f"raw.{table:<22} {row_count:>10,} rows")
