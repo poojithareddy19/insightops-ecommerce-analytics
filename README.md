@@ -38,7 +38,7 @@ Kaggle CSVs + Frankfurter API (GitHub Actions, weekly)
 | dbt/ | Staging and mart models with tests |
 | analyses/ | 17 SQL queries, each answering a business question, plus data quality checks |
 | notebooks/ | Statistics and simulated A/B test |
-| docs/ | Data audit, metric catalog, insight memo, A/B memo, capstone memo and deck, devlog |
+| docs/ | Data audit, metric catalog, insight memo, A/B memo, capstone memo and deck, devlog, blog posts |
 | dashboards/ | Executive and operations dashboards, Excel report, lineage graph |
 | scripts/ | Download, profiling, SQL runner, exports, dashboard/deck/report builders |
 
